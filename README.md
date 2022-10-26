@@ -1,5 +1,5 @@
 # superbird-doom
-![doom](https://user-images.githubusercontent.com/6026391/197947158-ffa17ce7-7607-4908-a3ec-19fbf6314c9c.gif)
+![doom](https://user-images.githubusercontent.com/6026391/197948690-672939b5-4459-4d39-a355-9fa2c00c7ccb.gif)
 
 Doom ([yvesgurcan/jsdoom](https://github.com/yvesgurcan/jsdoom)) on [Spotify Car Thing](https://carthing.spotify.com/).
 
