@@ -1,21 +1,25 @@
-# JSDoom
+# superbird-doom
+![doom](https://user-images.githubusercontent.com/6026391/197947158-ffa17ce7-7607-4908-a3ec-19fbf6314c9c.gif)
 
-* [Play JSDoom](https://doom.yvesgurcan.com)
-* [Release Notes](RELEASE_NOTES.md)
-* [Differences with the actual Doom engine](VANILLA.md)
-* [WadJS](https://github.com/yvesgurcan/wadjs)
+Doom ([yvesgurcan/jsdoom](https://github.com/yvesgurcan/jsdoom)) on [Spotify Car Thing](https://carthing.spotify.com/).
+
+Thanks to [frederic/superbird-bulkcmd](https://github.com/frederic/superbird-bulkcmd) and [pajowu/superbird-custom-webapp](https://github.com/pajowu/superbird-custom-webapp) for making this possible.
 
 ## Setup
+### Prepare the Car Thing
+Enable adb by following the steps in [frederic/superbird-bulkcmd](https://github.com/frederic/superbird-bulkcmd) to [put the device in USB burning mode](https://github.com/frederic/superbird-bulkcmd#guide--u-boot-shell-over-usb-usb-burning-mode) and [enable ADB](https://github.com/frederic/superbird-bulkcmd#boot-kernel-from-usb-to-enable-adb-access).
 
-`npm install`
+### Build and deploy doom for superbird
+Clone the repository:
 
-## Development
+`git clone https://github.com/adriancampos/superbird-doom/`
 
-`npm start`
+
+Run `./deploy.sh` to build and (temporarily) deploy doom on the Car Thing.
+
 
 ## Resources
 
-* <https://lodev.org/cgtutor/raycasting.html>
-* <https://dev.opera.com/articles/3d-games-with-canvas-and-raycasting-part-1>
-* <https://dev.opera.com/articles/3d-games-with-canvas-and-raycasting-part-2>
-* <https://github.com/id-Software/DOOM/tree/master/linuxdoom-1.10>
+* <https://github.com/frederic/superbird-bulkcmd>
+* <https://github.com/pajowu/superbird-custom-webapp>
+* <https://github.com/yvesgurcan/jsdoom>
