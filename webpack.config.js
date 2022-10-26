@@ -1,12 +1,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { GenerateSW } = require('workbox-webpack-plugin');
 
 module.exports = {
     output: {
         filename: '[name].[hash].js',
-        path: path.resolve(__dirname, './')
+        path: path.resolve(__dirname, './build')
     },
     plugins: [
         new CleanWebpackPlugin({
@@ -28,9 +29,11 @@ module.exports = {
                     handler: 'NetworkFirst'
                 }
             ]
-        })
+        }),
+        new CopyWebpackPlugin([
+            { from: 'assets/', to: 'assets/' }
+        ])
     ],
-    watch: true,
     devServer: {
         overlay: true,
         writeToDisk: true,

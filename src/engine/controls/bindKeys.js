@@ -62,6 +62,17 @@ export default state => {
         V: 'toggle viewing cone (automap only)'
     });
 
+
+    document.addEventListener('wheel', ((event)=> {
+    	if (event.deltaX < 0) {
+		dispatch({type: 'ROTATE_PLAYER_LEFT'})
+		new Promise(r=>setTimeout(r, 100)).then(()=>dispatch({type: 'STOP_PLAYER_DIRECTION'}));
+	} else if (event.deltaX > 0) {
+		dispatch({type: 'ROTATE_PLAYER_RIGHT'})
+		new Promise(r=>setTimeout(r, 100)).then(()=>dispatch({type: 'STOP_PLAYER_DIRECTION'}));
+	}
+    }));
+
     document.onkeydown = event => {
         const { keyCode } = event;
         const {
@@ -137,6 +148,7 @@ export default state => {
             default:
                 break;
             case UP:
+	    case 27:
             case W: {
                 dispatch({ type: 'MOVE_PLAYER_FORWARD' });
                 break;
@@ -270,6 +282,7 @@ export default state => {
             case DOWN:
             case W:
             case S:
+	    case 27:
                 dispatch({ type: 'STOP_PLAYER_SPEED' });
                 break;
             case LEFT:

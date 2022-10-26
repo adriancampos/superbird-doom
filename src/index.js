@@ -1,5 +1,8 @@
 import init from './engine/init';
 
+// Prevent qt-superbird-app from restarting
+new WebSocket('ws://localhost:8890');
+
 if (navigator.serviceWorker) {
     window.addEventListener('load', async () => {
         try {
